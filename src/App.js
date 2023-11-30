@@ -1,8 +1,12 @@
 import './App.css';
+import Dashboard from './Components/Dashboard'
 
 function App() {
   return (
-    <h1>hello</h1>
+    <>
+      <Dashboard />
+    </>
+    
   );
 }
 
