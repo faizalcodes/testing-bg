@@ -35,21 +35,23 @@
                 body: formData,
             });
         
+            const responseData = await response.json();
+
             if (response.ok) {
-                console.log('Product data sent successfully!');
-                // Clear the form fields after successful submission
                 setProduct({
                 name: '',
                 description: '',
                 price: '',
                 image: null,
                 });
+                alert(responseData.message)
             } else {
                 console.error('Failed to send product data');
             }
             } catch (error) {
             console.error('Error:', error);
             }
+
         };
         
 
