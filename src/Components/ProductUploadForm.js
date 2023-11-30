@@ -32,9 +32,6 @@
             try {
             const response = await fetch('http://192.168.29.149:3000/products/add', {
                 method: 'POST',
-                headers: {
-                'Content-Type': 'application/json',
-                },
                 body: formData,
             });
         
