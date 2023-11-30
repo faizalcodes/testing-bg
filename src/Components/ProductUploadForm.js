@@ -24,13 +24,18 @@
 
         const handleSubmit = async (e) => {
             e.preventDefault();
+            const formData = new FormData();
+            formData.append('name', product.name);
+            formData.append('description', product.description);
+            formData.append('price', product.price);
+            formData.append('image', product.image);
             try {
             const response = await fetch('http://192.168.29.149:3000/products/add', {
                 method: 'POST',
                 headers: {
                 'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(product),
+                body: formData,
             });
         
             if (response.ok) {
