@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import config from '../config/config'
+
+const {addProductURL} = config
 
 const FileInput = ({ onChange }) => {
   const [key, setKey] = useState(Date.now());
@@ -51,7 +54,8 @@ const ProductUploadForm = () => {
     formData.append('image', product.image);
 
     try {
-      const response = await fetch('http://192.168.29.149:3000/products/add', {
+      console.log(addProductURL);
+      const response = await fetch(`${addProductURL}`, {
         method: 'POST',
         body: formData,
       });
